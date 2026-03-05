@@ -89,3 +89,38 @@ Accepts a JSON payload with:
 - Document how to run your service locally, including any necessary setup for environment variables (like the Finnhub API key).
 - Optionally, add an endpoint to stop the monitoring job for a given stock.
 - Feel free to add any additional features or improvements if time allows!
+
+---
+
+## Running Locally
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Set environment variables:
+
+- Create a `.env` file (or export vars in your shell).
+- Required: `FINNHUB_API_KEY`
+- Optional: `PORT` (defaults to `3000`)
+
+Example:
+
+```env
+FINNHUB_API_KEY=your_finnhub_api_key_here
+PORT=3000
+```
+
+3. Start the server:
+
+```bash
+npm start
+```
+
+4. API endpoints:
+
+- `POST /start-monitoring`
+- `GET /history?symbol=<stockSymbol>`
+- `POST /refresh`
